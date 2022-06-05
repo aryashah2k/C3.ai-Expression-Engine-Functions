@@ -1,3 +1,7 @@
+# Module 2
+
+## Get the Package, Do the Challenge
+
 The goal of this exercise is to populate the SmartBulbMeasurment Type using the imperfect csv source file.  The timeZone setting for the SmartBulbMeasurementSeries Type will also be affected.  If you have existing data on your tag, you will want to execute SmartBulbMeasurement.removeAll() and SmartBulbMeasurementSeries.removeAll() prior to starting this exercise. 
 
 The sample file for SourceSmartBulbMeasurement is called SmartBulbMeasurement_TimeZone.csv.  It is available in the SampleSeedData folder.  Move this file to lightbulbExercise/test/seed/SourceSmartBulbMeasurement prior to beginning the exercise.  When provisioning, check the box “Include test data” or seed data inside the test folder will not be included with provisioning. 
