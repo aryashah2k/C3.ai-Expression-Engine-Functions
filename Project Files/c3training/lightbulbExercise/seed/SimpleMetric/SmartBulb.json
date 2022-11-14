@@ -1,0 +1,27 @@
+[
+    {
+      "id": "Status_SmartBulb",
+      "name": "Status",
+      "description": "Status (1 or 0) indicating ON or OFF of the SmartBulb over time",
+      "srcType": "SmartBulb",  
+      "path": "bulbMeasurements",
+      "expression": "max(max(normalized.data.status))"
+    },
+    {
+      "id": "AverageLumens_SmartBulb",
+      "name": "AverageLumens",
+      "description": "Average lumens over time of the SmartBulb",
+      "srcType": "SmartBulb",  
+      "path": "bulbMeasurements",
+      "expression": "avg(avg(normalized.data.lumens))"
+    },
+    {
+      "id": "AverageTemperature_SmartBulb",
+      "name": "AverageTemperature",
+      "description": "Average temperature over time of the SmartBulb",
+      "srcType": "SmartBulb",  
+      "path": "bulbMeasurements",
+      "expression": "avg(avg(normalized.data.temperature))"
+    }
+  ]
+  
