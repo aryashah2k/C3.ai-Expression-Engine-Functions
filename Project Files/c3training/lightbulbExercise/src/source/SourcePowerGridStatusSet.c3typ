@@ -1,0 +1,21 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* SourcePowerGridStatusSet.c3typ
+* This type represents the raw data for {@link PowerGridStatus}
+*/
+type SourcePowerGridStatusSet mixes Source {
+
+ // The datetime of a {@link PowerGridStatus} event
+ TS: datetime
+ // The id of the {@link Building}
+ Building: string
+ // The status ON or OFF (1 or 0) for the power grid of a {@link Building}
+ Status: int
+}
