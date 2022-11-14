@@ -1,0 +1,26 @@
+[
+  {
+    "name": "IsDefective",
+    "id": "IsDefective",
+    "description": "Indicator (1 or 0) if the lightbulb died",
+    "expression": "or(eval('HOUR', AverageLumens == 0 && Status == 1 && PowerGridStatus == 1)) ? 1 : 0"
+  },
+  {
+    "name": "HasEverFailed",
+    "id": "HasEverFailed",
+    "description": "Indicates (1 or 0) if the SmartBulb has failed during evaluated interval",
+    "expression": "rolling('SUM',IsDefective) ? 1 : 0"
+  },
+  {
+    "name": "WillFailNextMonth",
+    "id": "WillFailNextMonth",
+    "description" : "Indicator (1 or 0) if the lightbulb died within the next 30 days. Must evaluate with an interval or DAY.",
+    "expression": "window('MAX', IsDefective, 0, 30)"
+  },
+  {
+    "id":"EnergyUsageDiff",
+    "name":"EnergyUsageDiff",
+    "description": "TotalPowerSmartFridge - TotalPowerSmartBulb",
+    "expression":"TotalPowerSmartFridge - TotalPowerSmartBulb"
+}
+]
