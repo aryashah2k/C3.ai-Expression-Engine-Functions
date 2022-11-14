@@ -1,0 +1,23 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* Manufacturer.c3typ 
+* A company that manufactures lightbulbs.
+*/
+@db(datastore="Vendors")
+entity type Manufacturer mixes External, NoSystemCols schema name "LIGHTBULB_MANUFACTURERS"{
+    // The id of the manufacturer
+    id: ~ schema name "manufacturer_id"
+
+    // The name of the manufacturer
+    fullName: string schema name "manufacturer_name"
+
+    // List of lightbulbs made by this manufacturer
+    lightBulbs: [LightBulb](manufacturer)
+}
