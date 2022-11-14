@@ -1,0 +1,27 @@
+[
+  {
+    "id": "PowerGridStatus_SmartBulb",
+    "name": "PowerGridStatus",
+    "description": "Status (1 or 0) indicating ON or OFF of the PowerGrid over time",
+    "srcType": "SmartBulb",
+    "path": "fixtureHistory.to.apartment.building",
+    "tsDecl": {
+      "data": "gridStatusSet",
+      "value": "value",
+      "treatment": "PREVIOUS",
+      "start": "timestamp"
+    }
+  },
+  {
+    "id": "PowerGridStatus_Building",
+    "name": "PowerGridStatus",
+    "description": "Status (1 or 0) indicating ON or OFF of the PowerGrid over time",
+    "srcType" : "Building",
+    "tsDecl": {
+      "data": "gridStatusSet",
+      "value": "value",
+      "treatment": "PREVIOUS",
+      "start": "timestamp"
+    }
+  }
+]
