@@ -1,0 +1,39 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* SmartBulbMeasurement.c3typ
+* A single measurement taken from a single {@link SmartBulb}
+*/
+@db(datastore='cassandra',
+ partitionKeyField='parent',
+ persistenceOrder='start',
+ persistDuplicates=false,
+ compactType=true)
+entity type SmartBulbMeasurement mixes TimedDataPoint<SmartBulbMeasurementSeries>  schema name 'SMRT_BLB_MSRMNT' {
+ 
+ // The status of the smart bulb (on or off)
+ @ts(treatment='previous')
+ status: int 
+
+ // The measured power (P=IV or current * voltage)
+ @ts(treatment='avg', unitPath="parent.smartBulb.powerUOM")
+ power: double 
+
+ // The measured light output
+ @ts(treatment='avg', unitPath="parent.smartBulb.lumensUOM")
+ lumens: double 
+
+ // The measured voltage.
+ @ts(treatment='avg', unitPath="parent.smartBulb.voltageUOM")
+ voltage: double
+
+ // The measured temperature.
+ @ts(treatment='avg', unitPath="parent.smartBulb.temperatureUOM")
+ temperature: double 
+}
