@@ -1,0 +1,10 @@
+{
+  "id": "SmartBulbMeasurementSource",
+  "name": "SmartBulbMeasurementSource",
+  "source": {
+    "typeName": "SourceSmartBulbMeasurement"
+  },
+  "sourceSystem": {
+    "id": "Legacy"
+  }
+}
