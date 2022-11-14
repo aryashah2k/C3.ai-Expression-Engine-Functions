@@ -1,0 +1,23 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* SmartFridgeMeasurement.c3typ
+* A single measurement taken from a single {@link SmartFridge}
+*/
+@db(datastore='cassandra',
+ partitionKeyField='parent',
+ persistenceOrder='start',
+ persistDuplicates=false,
+ compactType=true)
+entity type SmartFridgeMeasurement mixes TimedDataPoint<SmartFridgeMeasurementSeries>  schema name 'SMRT_FRDG_MSRMNT' {
+
+ // The measured power (P=IV or current * voltage)
+ @ts(treatment='avg', unitPath="parent.smartFridge.powerUOM")
+ power: double
+}
