@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "ea6f834a-ad51-4803-a625-a6d9c065e45c",
+		"name": "/import API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FileSourceCollection",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/csv;"
+					},
+					{
+						"key": "Authorization",
+						"value": "<AUTH_TOKEN>"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "<HOST_URL>/import/1/<TENANT>/<TAG>/<FileSourceCollection>/<FileName.csv>",
+					"host": [
+						"<HOST_URL>"
+					],
+					"path": [
+						"import",
+						"1",
+						"<TENANT>",
+						"<TAG>",
+						"<FileSourceCollection>",
+						"<FileName.csv>"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
