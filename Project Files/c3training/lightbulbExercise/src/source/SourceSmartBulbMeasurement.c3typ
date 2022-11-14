@@ -1,0 +1,35 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* SourceSmartBulbMeasurement.c3typ
+* This type represents the raw data that for {@link SmartBulbMeasurement}s
+*/
+type SourceSmartBulbMeasurement mixes Source {
+ 
+ // This represents the datetime to use for the start of {@link SmartBulbMeasurement}
+ TS: datetime
+ 
+ // This represents the id of the {@link SmartBulb}
+ SN: string
+ 
+ // This represents the status measurement
+ Status: integer
+ 
+ // This represents the watts measurement
+ Watts: double
+ 
+ // This represents the lumens measurement
+ Lumens: double
+ 
+ // This represents the voltage measurement
+ Voltage: double
+ 
+ // This represents the temperature measurement
+ Temp: double
+}
