@@ -1,0 +1,24 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* This type transforms data from the {@link SourceSmartFridgeMeasurement} to the {@link SmartFridgeMeasurement} type.
+*/
+type TransformSourceSmartFridgeMeasurementToSmartFridgeMeasurement mixes SmartFridgeMeasurement transforms SourceSmartFridgeMeasurement {
+ /**
+ * Use the serial number field ("SN") of the Source to create a properly formatted pointer 
+ * to the parent {@link SmartFridgeMeasurementSeries} object.
+ */
+ parent: ~ expression { id: "concat('SMFRDG_serialNo_',SN)" }
+ 
+ // This field will take the value of the "TS" field for the record
+ start: ~ expression 'TS'
+
+ // This field will take the value of the "Watts" field for the record
+ power: ~ expression "Watts"
+}
