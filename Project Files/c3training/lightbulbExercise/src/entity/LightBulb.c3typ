@@ -1,0 +1,32 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* LightBulb.c3typ
+* A single light bulb.
+*/
+extendable entity type LightBulb schema name "LGHT_BLB" {
+    // The bulb type for this bulb
+    bulbType: !string enum('CFL', 'LED', 'INCAN')
+    
+    // The light bulb's wattage
+    wattage: !decimal
+    
+    // The name of this light bulb's {@link Manufacturer}.
+    manufacturer: !Manufacturer
+    
+    // The time at which this light bulb was manufactured.
+    startDate: !datetime
+
+    // The collection of {@link LightBulbToFixtureRelation}s for this bulb
+    @db(order='descending(start)')
+    fixtureHistory: [LightBulbToFixtureRelation](from)
+
+    // The {@link Fixture} this bulb is currenly in
+    currentFixture: Fixture stored calc 'fixtureHistory[0].(end == null).to'
+}
