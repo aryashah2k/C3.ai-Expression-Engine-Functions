@@ -1,0 +1,26 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* TransformSourcePowerGridStatusSetToPowerGridStatusSet.c3typ
+* Transforms data from the {@link SourcePowerGridStatus} to the {@link Building} type.
+*/
+type TransformSourcePowerGridStatusSetToPowerGridStatusSet mixes PowerGridStatusSet transforms SourcePowerGridStatusSet {
+
+ // The concatinated Building and Fields used as a unique id
+ id: ~ expression "concat(Building,'_',TS)"
+ 
+ // The parent building record for this status
+ parent: ~ expression {id: 'Building'}
+
+ // The time the status changed
+ timestamp: ~ expression 'TS'
+
+ // The status at the time of change
+ value: ~ expression 'Status'
+}
