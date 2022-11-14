@@ -1,0 +1,14 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* PowerGridStatusSet.c3typ
+* The history of power grid statusfor a {@link Building}.
+*/
+
+entity type PowerGridStatusSet mixes TimedValueHistory<Building>, Integer schema name 'PWR_GRD_STTS_ST'
