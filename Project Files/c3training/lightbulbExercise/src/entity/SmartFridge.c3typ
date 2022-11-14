@@ -1,0 +1,23 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* SmartFridge.c3typ
+* A smart fridge that streams power data about power consumption
+*/
+entity type SmartFridge mixes MetricEvaluatable schema name "SMRT_FRDG" {
+ 
+    // Unit of measurement for weight
+    weightUOM: Unit post default "{id:'kilogram'}"
+    
+    // This fridge's historical measurement series (TimedDataPoint).
+    fridgeMeasurements: [SmartFridgeMeasurementSeries](smartFridge)
+
+    // This fridge's historical weight series (TimeseriesDataPoint).
+    fridgeWeight: [SmartFridgeWeightSeries](smartFridge)
+}
