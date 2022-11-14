@@ -1,0 +1,26 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* SourceLightBulbToFixtureRelation.c3typ
+* This type represents the raw data for {@link LightBulbToFixtureRelation} information.
+*/
+type SourceLightBulbToFixtureRelation mixes Source {
+ 
+ // This represents the id of a {@link SmartBulb}
+ SN: string
+ 
+ // This represents the id of a {@link Fixture}
+ fixture: string
+
+// The date time to use for the start of a {@link LightBulbToFixtureRelation}
+ start: datetime
+
+ // The date time to use for the end of a {@link LightBulbToFixtureRelation}
+ end: datetime
+}
