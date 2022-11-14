@@ -1,0 +1,16 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* LightBulbToFixtureRelation.c3typ
+* Describes a timed interval relationship between a {@link LightBulb} and a {@link Fixture}.
+*/
+
+// These records will be indexed on two fields; the to and from fields.
+@db(index=['to', 'from'])
+entity type LightBulbToFixtureRelation mixes TimedIntervalRelation<SmartBulb, Fixture> schema name "LGHT_BLB_FXTR_RLTN"
