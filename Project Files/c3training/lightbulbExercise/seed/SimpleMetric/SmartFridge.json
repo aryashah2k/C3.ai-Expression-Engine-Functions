@@ -1,0 +1,10 @@
+[
+    {
+        "id": "TotalPower_SmartFridge",
+        "name": "TotalPower",
+        "description": "Total watts over time of the SmartBulb",
+        "srcType": "SmartFridge",  
+        "path": "fridgeMeasurements",
+        "expression": "sum(sum(normalized.data.power))"
+    }
+]
