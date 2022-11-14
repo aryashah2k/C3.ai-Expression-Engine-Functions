@@ -1,0 +1,14 @@
+[
+  {
+    "name": "SwitchCount",
+    "id": "SwitchCount",
+    "description": "The number of times a lightbulb is switched on or off beginning at the 'start' given",
+    "expression": "sum(eval('HOUR', abs(rollingDiff(Status))))"
+  },
+  {
+    "name": "SwitchCountPreviousWeek",
+    "id": "SwitchCountPreviousWeek",
+    "description": "The total number of times a lightbulb is switched on or off up in the previous week of the interval",
+    "expression": "window('SUM', SwitchCount, -7, 7)"
+  }
+]
