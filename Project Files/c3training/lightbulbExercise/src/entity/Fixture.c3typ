@@ -1,0 +1,23 @@
+/**
+ * Copyright 2009-2021 C3.ai All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3.ai and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3.ai and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* Fixture.c3typ
+* A light fixture that a single {@link SmartBulb} may be connected to.
+*/
+entity type Fixture schema name "FXTR" {
+    // The {@link Apartment} this fixture is in.
+    apartment: !Apartment
+
+    // The collection of {@link LightBulbToFixtureRelation}s for this fixture
+    @db(order='descending(start)')
+    bulbHistory: [LightBulbToFixtureRelation](to)
+
+    // The current {@link LightBulb} in this fixture
+    currentBulb: SmartBulb stored calc 'bulbHistory[0].(end == null).from'
+}
