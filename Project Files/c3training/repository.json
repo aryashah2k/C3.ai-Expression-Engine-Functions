@@ -1,0 +1,6 @@
+{
+    "name": "c3training",
+    "version": "0.1.0",
+    "description": "My Training Repository",
+        "dependencies": { "server" : "7.17.0" }
+}
